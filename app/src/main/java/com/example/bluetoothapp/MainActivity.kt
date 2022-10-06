@@ -25,7 +25,7 @@ data class Bluetooths(
     val adress: String
 )
 
-abstract class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     val bluetoothDevices: MutableList<Bluetooths> = mutableListOf()
 
@@ -43,7 +43,7 @@ abstract class MainActivity : AppCompatActivity() {
         val button_scanner = findViewById<Button>(R.id.scanner)
 
         button_scanner.setOnClickListener(){
-            
+
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
                 return@setOnClickListener
             }
